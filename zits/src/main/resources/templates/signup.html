@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Registration Page</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/953cd41e6c.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+        margin-right:0;
+        padding:0;
+        background-size: cover;
+        font-weight:300;
+        color:#fff;
+        background:url(https://blogs.worldbank.org/sites/default/files/styles/hero/public/blogs-images/2019-11/shutterstock_1236384700_1.jpg?itok=UunnhvmB) no-repeat;
+        }
+
+        .form-group{
+        font-size:16px;
+        font-weight:400;
+        }
+        .form-group a{
+        color:red;
+        }
+        .col-md-4{
+        font-size:16px;
+        font-weight:400;
+        }
+
+</style>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="data:image/jpeg;base64,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" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Zesco Registration and Login Page
+            </a>
+        </div>
+    </nav>
+
+    <div class="container" align="center">
+        <div>
+            <h2>User Registration: - Sign Up to the System</h2>
+        </div>
+        <div>
+            <div th:if="${param.success}">
+                <div class="alert-info"> You have successfully signed up to our site! You can now Login.</div>
+            </div>
+            <form th:action="@{/signup}" method="post" th:object="${user}">
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputFName" class="control-label">First Name
+                    </label>
+                    <input type="text" class="form-control" id="inputFName" required autofocus="autofocus" th:field="*{fName}" maxlength="40" placeholder="Your First Name" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputLName" class="control-label">Last Name</label>
+                    <input type="text" class="form-control" id="inputLName" required autofocus="autofocus" th:field="*{lName}" maxlength="40" placeholder="Your Last Name" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputUsername" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" required autofocus="autofocus" th:field="*{username}" maxlength="40" placeholder="Your Username" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputPassword" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" required autofocus="autofocus" th:field="*{password}" minlength="8" maxlength="20" placeholder="Your Password" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputAge" class="control-label">Age</label>
+                    <input type="number" class="form-control" id="inputAge" required autofocus="autofocus" th:field="*{age}" placeholder="Your Age" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-3">
+                    <label for="inputEmail" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" required autofocus="autofocus" th:field="*{email}" maxlength="40" placeholder="Your Email" />
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">Sign Up</button>
+                    <button class="btn btn-danger" type="reset">Cancel</button>
+
+                    <span>Already Registered? <a href="/" th:href="@{/login}">Login here</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Source Sans Pro;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrapper {}
+
+
+/**Side Bar Props*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 230px;
+    background: #b3aec7;
+    padding: 6px 14px;
+}
+
+.social_media {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-55%);
+}
+
+.social_media a {
+    display: block;
+    width: 40px;
+    background: #564c88;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0, 5px;
+    color: #bdb8d7;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.sidebar .logo_content .logo {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 20;
+    border-bottom-right-radius: 20;
+}
+
+.logo_content .logo {
+    margin-right: 5px;
+}
+
+.sidebar # .logo_content .logo .logo_name {
+    font-size: 20;
+    font-weight: 400;
+}

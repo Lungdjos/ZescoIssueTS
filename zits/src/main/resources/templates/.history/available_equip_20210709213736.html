@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwE0ngsV7Zt27NXFoaoApmYm81iuXoPkF0JwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="js/nav.js"></script>
+    <title>Equipment Tracking Page</title>
+</head>
+
+<body>
+    <!--Nav Bar-->
+    <nav>
+        <div class="logo">
+            <img src="/img/logo1.jpg" alt="Logo Image">
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Issue</a></li>
+            <li><a href="#">Equipments</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><button class="login-button" href="#">Login</button></li>
+            <li><button class="join-button" href="#">Sign Up</button></li>
+        </ul>
+    </nav>
+    <!--Contents-->
+    <!--Adding Equipments-->
+    <div>
+        <a th:href="@{/newEquipmentForm}" class="btn btn-primary btn-sm mb-3">Add New Equipment</a>
+
+    </div>
+
+    <!--Available Equipments-->
+    <div class="table-container" class="table table-striped table-responsive-md">
+        <h2>Available Equipments<small>In the System</small></h2>
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Equipment Id</div>
+                <div class="col col-2">Equipment Name</div>
+                <div class="col col-3">Equipment Description</div>
+            </li>
+            <li class="table-row" th:each="equipment : ${listOfEquipment}">
+                <div class="col col-1" data-label="Equipment Id" th:number="${equipment.equipId}"></div>
+                <div class="col col-2" data-label="Equipment Name" th:text="${equipment.equipName}"></div>
+                <div class="col col-3" data-label="Equipment Description" th:text="${equipment.equipDescription}"></div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

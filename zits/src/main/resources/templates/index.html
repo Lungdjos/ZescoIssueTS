@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Home Page</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/953cd41e6c.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+.fa-2x {
+font-size: 2em;
+}
+.fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+overflow:visible;
+}
+
+.main-menu {
+background:#212121;
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+.main-menu>ul {
+margin:7px 0;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:250px;
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#999;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:#5fa2db;
+}
+.area {
+float: left;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+
+    </style>
+    <style>
+        .welcome{
+        margin-left: 250px;
+        background: url(https://businesstech.co.za/news/wp-content/uploads/2014/09/Electricity-01.png);
+        width:100%;
+        color:white;
+        }
+        footer{
+        width:100%;
+        color: orange;
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRapWwdcAWfuzKp3QkziXdaq_4c9Y9FYUmS6ag8TbL2tVuviLr4vuRKiQ0lm_q0qhLTXn4&usqp=CAU);
+        }
+        footer .dropdown-item{
+        color:green;
+        font-size: 14px;
+        font-weight: 500;
+        }
+        body{
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDgNi5ncJ4ia34K3pfup3rKof2pYS5yiu9jYyVK29fnte4OV62VyEEYT-1kisQfLGtVZs&usqp=CAU) no-repeat;
+        background-size: cover;
+        color:;
+        }
+        body p{
+        font-size:16px;
+        }
+        #image{
+        border-radius: 90px;
+        height: 90px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="area" id="welcome">
+        <div class="welcome">
+        <h1>Welcome <span sec:authentication="principal.username">User</span></h1>
+    </div></div><nav class="main-menu">
+        <ul>
+            <li>
+                <a th:href="@{/}">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                                Home
+                            </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a th:href="@{/issue}">
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                                Issues
+                            </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a th:href="@{/equipment}">
+                    <i class="fa fa-list fa-2x"></i>
+                    <span class="nav-text">
+                                Equipment
+                            </span>
+                </a>
+
+            </li>
+
+            <li>
+                <a th:href="@{/about}">
+                    <i class="fa fa-info fa-2x"></i>
+                    <span class="nav-text">
+                                About
+                            </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li sec:authorize="isAuthenticated()">
+                <a th:href="@{/logout}">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                                Logout
+                            </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+<div align="center" class="container">
+
+    <div class="classclasscolor">
+        <div class="w3-half w3-padding-large fade-in-image">
+            <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKtzE0BvbMbW1tNhV-2uWCqD35scnHB7i_1Q&usqp=CAU" class="w3-round w3-image w3-opacity-min fade-in-image" alt="">
+        </div>
+        <div class="w3-container">
+            <h1 class="w3-animate-fading">Welcome to Zesco Issue Tracking System Web Application</h1>
+        </div>
+    </div>
+
+    <div class="w3-container">
+
+
+
+        <div class="w3-padding-top-64 Another-point">
+            <div class="w3-row">
+
+                <div class="w3-half w3-text-black w3-padding-large">
+                    <h2 class="w3-center">Explore of Nuclear Energy</h2>
+                    <p>
+                        Zambia must accelerate the adoption and operationalisation of the nuclear science
+                        to assist the country counter the effects of the climatic changes that have reduced
+                        its hydro energy potential to meet national developmental agenda, an atomic expert
+                        has advised.Rowland Msiska, the head of&nbsp; the Zambia Atomic Energy Agency (ZAMATOM)
+                        notes that while Zambia might be endowed with various natural and mineral resources, the
+                        devastating effects of drought spurred by climate change, has dwarfed economic growth
+                        prospects hence the need to adopt nuclear science to avert the effects.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w3-col l6 m6 w3-padding-large">
+
+            <h4>Power Stations</h4>
+            <p class="w3-text-black">
+                Zambia has a lot of power stations which it uses to generate energy
+                to produce power foer the entire nation. though it beign a land locked
+                country, it has some rivers and lakes which helps to make it easier to
+                provide power. though it does not only use hydro-power stations alone,
+                it also uses the soalar energy and wind energy and converts it to power.<br>
+            </p>
+
+
+
+            <!-- about other sites-->
+            <h4>Zambia Chamber of Commerce and Industry</h4>
+            <p class="w3-text-black">The Zambia Chamber of Commerce and Industry (ZACCI) says there
+                is need for private sector investment in the energy sector because Zesco has no capacity
+                to satisfy all of the country’s energy needs being a public utility with a lot of limitations.
+                In an interview with News Diggers! ZACCI president Michael Nyirenda advised government to create
+                an environment that attracted investment in the energy sector in order to stop Zesco
+                from monopolizing the energy industry and provide people with alternatives.</p>
+
+
+
+            <!--about the animals-->
+            <h4>National Debts </h4>
+            <p class="w3-text-black">
+
+                Zambia’s government has said it will assume Zesco’s debt to private
+                power suppliers in a bid to promote confidence as it seeks to renegotiate
+                power supply agreements. A government team led by the Industrial Development
+                Corporation (IDC) is renegotiating power purchase agreements with IPPs in an
+                attempt to reduce the tariffs at which Zesco buys power from private producers.
+                Ministry of Energy sources estimate Zesco’s debt to IPPs had reached around $726m
+                at the end of November 2020.</p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <footer>
+        <div class="w3-container w3-center  w3-text-black w3-animate-left">
+            <h4>ZESCO HERE TO POWER THE NATION</h4>
+        </div>
+        <div class="row w3-animate-fading">
+            <div class="col">
+                <h4>What you would like to do</h4>
+                <a class="dropdown-item" th:href="@{/issue}"> See Issues</a>
+                <a class="dropdown-item" th:href="@{/equipment}"> See Equipment</a>
+                <a class="dropdown-item" th:href="@{/logout}">Logout.</a>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>

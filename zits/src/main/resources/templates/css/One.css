@@ -1,0 +1,6 @@
+body{background-color:#CD853F;}
+.classclasscolor{background-color:	#556B2F;}
+.fade-in-image:hover {
+  opacity:100%;
+  transition:opacity 2s
+}
