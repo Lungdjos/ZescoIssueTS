@@ -282,11 +282,32 @@
         }
 
     </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body{
+
+        }
+
+        footer,
+        header{
+        font-family: 'Poppins', sans-serif;
+        background: #1d2424;
+          color:white;
+          list-style: none;
+        }
+
+
+        #Footer__Bas{
+          color: #1d2424;
+          background:white;
+        }
+    </style>
 
 </head>
 
 <body>
-    <div class="area"></div>
+    <div class="area" style="margin-left: 60px;"></div>
     <nav class="main-menu">
     <ul>
         <li>
@@ -346,16 +367,17 @@
             </div>
             <div class="name">Lungu David</div>
             <div class="desc">Bsc. Computer Science</div>
-            <br>
-            <div class="desc">Developer & Designer</div>
             <div class="desc"><i>18122108</i></div>
+            <hr>
+            <div class="desc">Developer & Designer</div>
+
             <div class="sm">
-                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/david-lungu-5383b71b8/" class="fab fa-linkedin"></a>
                 <a href="https://twitter.com/lungud78" class="fab fa-twitter"></a>
                 <a href="https://github.com/Lungdjos" class="fab fa-github"></a>
 
             </div>
-            <a href="+260976813878" class="contact-btn">Contact Me</a>
+            <a href="tel:0964878078" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});" class="contact-btn">Contact Me</a>
         </div>
         <div class="card-footer">
             <p>What has been learnt from the project.</p>
@@ -372,12 +394,48 @@
                 <div class="border"></div>
                 <div class="item">
                     <span>SQL</span>
-                    Committing Transactions
+                    Committing DB Transactions
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+    <footer class="w-full flex flex-col items-center text-center">
+        <div id="footer__haut" class="w-full flex flex-col items-center text-center sm:flex-row">
+            <div class="w-full sm:w-1/3 flex flex-col py-4">
+                <h1 class="mb-4 font-black tracking-widest">Front End Tools</h1>
+                <ul class="flex flex-col leading-relaxed">
+                    <li><i class="fab fa-js"></i> JAVASCRIPT</li>
+                    <li><i class="fab fa-html5"></i> HTML</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS</li>
+
+                </ul>
+            </div>
+
+            <div class="w-full sm:w-1/3 flex flex-col py-4">
+                <h1 class="mb-4 font-black tracking-widest">Get In Touch</h1>
+                <ul class="flex flex-col leading-relaxed">
+                    <li><i class="fas fa-phone"></i> +260 976 813 878</li>
+                    <li><i class="fas fa-at"></i> lungudjos@gmail.com</li>
+                    <li><i class="fas fa-map-pin"></i> Ndola,Zambia</li>
+                </ul>
+            </div>
+
+            <div class="w-full sm:w-1/3 flex flex-col py-4">
+                <h1 class="mb-4 font-black tracking-widest">Back End Tools</h1>
+                <ul class="flex flex-col leading-relaxed"><li><i class="fas fa-chalkboard">
+                </i> SPRING BOOT FRAMEWORK</li>
+                    <li><i class="fas fa-chalkboard"></i> JAVA</li>
+                    <li><i class="fas fa-chalkboard"></i> SQL</li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="Footer__Bas" class="w-full py-2">
+            <p>Made by: Lungu David</p>
+        </div>
+    </footer>
 
 
 </body>

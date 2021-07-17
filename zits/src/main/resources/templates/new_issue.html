@@ -391,7 +391,7 @@ input:focus, textarea:focus {
                         <select class="select"   th:field="*{equipment}">
                             <option th:each="equipment:${listEquipment}"
                                     th:value="${equipment.equipName}"
-                                    th:text="#{${equipment.equipName}}"></option>
+                                    th:text="${equipment.equipName}"></option>
                     </select>
 
 
