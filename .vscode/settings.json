@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "Lungu"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
