@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ZitsApplication<zits>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.lungudavid.zits.ZitsApplication",
+            "projectName": "zits",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
